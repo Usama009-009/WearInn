@@ -1,0 +1,125 @@
+<!-- navbar.component.html -->
+<header (mouseleave)="hideAllPanels()">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center" href="#" (mouseover)="hideAllPanels()">
+        <img src="../../assets/Images/Logo.png" alt="WearINN Logo" width="80" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+        aria-controls="offcanvasNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <img src="../../assets/Images/Logo.png" alt="WearINN Logo" width="80" />
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+            <li class="nav-item" (mouseover)="showPanel('homePanel')">
+              <a class="nav-link d-flex align-items-center" href="#">
+                <i class="bi bi-house"></i>
+                <span class="ms-2">Home</span>
+              </a>
+            </li>
+            <li class="nav-item" (mouseover)="showPanel('womenPanel')">
+              <a class="nav-link d-flex align-items-center" href="#">
+                <i class="bi bi-shop"></i>
+                <span class="ms-2">Women</span>
+              </a>
+              <div class="dropdown-panel" *ngIf="isPanelVisible('womenPanel')">
+                <div class="panel-section">
+                  <h6 class="linkable-heading">Kurti</h6>
+                  <a href="#" class="dropdown-link">Formal Kurti</a>
+                  <a href="#" class="dropdown-link">Casual Kurti</a>
+                </div>
+                <div class="panel-section">
+                  <h6 class="linkable-heading">Formals</h6>
+                  <a href="#" class="dropdown-link">Stitched</a>
+                  <a href="#" class="dropdown-link">Unstitched</a>
+                </div>
+                <div class="panel-section">
+                  <h6 class="linkable-heading">Bottom Wear</h6>
+                  <a href="#" class="dropdown-link">Prayer Mat</a>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item" (mouseover)="showPanel('menPanel')">
+              <a class="nav-link d-flex align-items-center" href="#">
+                <i class="bi bi-shop"></i>
+                <span class="ms-2">Men</span>
+              </a>
+              <div class="dropdown-panel" *ngIf="isPanelVisible('menPanel')">
+                <div class="panel-section">
+                  <h6 class="linkable-heading">Kurta Pajama</h6>
+                  <a href="#" class="dropdown-link">Stitched</a>
+                  <a href="#" class="dropdown-link">Unstitched</a>
+                </div>
+                <div class="panel-section">
+                  <h6 class="linkable-heading">Kameez Shalwar</h6>
+                  <a href="#" class="dropdown-link">Stitched</a>
+                  <a href="#" class="dropdown-link">Unstitched</a>
+                </div>      
+                <div class="panel-section">
+                  <h6 class="linkable-heading">Bottom Wear</h6>
+                  <a href="#" class="dropdown-link">Prayer Mat</a>
+                </div>  
+                <div class="panel-section">
+                  <h6 class="linkable-heading">Bottom Wear</h6>
+                  <a href="#" class="dropdown-link">Prayer Mat</a>
+                </div>        
+              </div>
+            </li>
+            <li class="nav-item" (mouseover)="showPanel('boysGirlsPanel')">
+              <a class="nav-link d-flex align-items-center" href="#">
+                <i class="bi bi-shop"></i>
+                <span class="ms-2">Boys & Girls</span>
+              </a>
+              <div class="dropdown-panel" *ngIf="isPanelVisible('boysGirlsPanel')">
+                <div class="panel-section">
+                  <h6 class="linkable-heading">Boys</h6>
+                  <a href="#" class="dropdown-link">Kurta Pajama</a>
+                  <a href="#" class="dropdown-link">Kameez Shalwar</a>
+                  <a href="#" class="dropdown-link">Unstitched</a>
+                </div>
+                <div class="panel-section">
+                  <h6 class="linkable-heading">Girls</h6>
+                  <a href="#" class="dropdown-link">Kurti</a>
+                  <a href="#" class="dropdown-link">Bottoms</a>
+                  <a href="#" class="dropdown-link">Stitched</a>
+                  <a href="#" class="dropdown-link">Unstitched</a>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item" (mouseover)="hideAllPanels()">
+              <a class="nav-link d-flex align-items-center" href="#">
+                <i class="bi bi-info-circle"></i>
+                <span class="ms-2">About</span>
+              </a>
+            </li>
+            <li class="nav-item" (mouseover)="hideAllPanels()">
+              <a class="nav-link d-flex align-items-center" href="#">
+                <i class="bi bi-envelope"></i>
+                <span class="ms-2">Contact</span>
+              </a>
+            </li>
+          </ul>
+          <form class="d-flex mt-3 mt-lg-0 ms-lg-3 search-form" (mouseover)="hideAllPanels()">
+            <input class="form-control me-2 search-input" type="search" placeholder="Search" aria-label="Search" />
+            <button class="btn btn-outline-dark me-2 search-toggle" type="button">
+              <i class="bi bi-search"></i>
+            </button>
+          </form>
+          <div class="mt-3 mt-lg-0 ms-lg-3 d-flex User-Box" (mouseover)="hideAllPanels()">
+            <a href="#" class="btn btn-outline-dark me-2">
+              <i class="bi bi-person"></i>
+            </a>
+            <a href="#" class="btn btn-outline-dark">
+              <i class="bi bi-cart"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
